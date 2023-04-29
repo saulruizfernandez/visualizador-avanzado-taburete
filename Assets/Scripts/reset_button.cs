@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class reset_button : MonoBehaviour
+public class reset_button : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] Sprite boton_sin_pulsar;
     [SerializeField] Sprite boton_pulsado;
-    Image imagen;
+    Button btn;
 
     void Start()
     {
-        imagen = this.GetComponent<Image>();
-        imagen.sprite = boton_sin_pulsar;   
+        btn = this.GetComponent<Button>();
+        btn.image.sprite = boton_sin_pulsar;
     }
 
     void Update()
@@ -20,12 +21,13 @@ public class reset_button : MonoBehaviour
 
     }
 
-    void ChangeSprite()
+    public void OnPointerDown(PointerEventData eventData) 
     {
-        imagen.sprite = boton_pulsado;
+        btn.image.sprite = boton_pulsado;
     }
-    void ResetSprite()
+
+    public void OnPointerUp(PointerEventData eventData) 
     {
-        imagen.sprite = boton_sin_pulsar;
-    }
+        btn.image.sprite = boton_sin_pulsar;
+    }  
 }
