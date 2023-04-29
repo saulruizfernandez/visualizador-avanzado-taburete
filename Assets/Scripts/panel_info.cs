@@ -12,7 +12,7 @@ public class panel_info : MonoBehaviour
     public bool pulsadoI = false;
     void Start()
     {
-
+        panel.SetActive(true);
     }
 
     void Update()
