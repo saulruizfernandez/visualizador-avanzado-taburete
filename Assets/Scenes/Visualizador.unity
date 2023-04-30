@@ -323,6 +323,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 465673143}
+        m_TargetAssemblyTypeName: toggle_controlador, Assembly-CSharp
+        m_MethodName: CuandoDropCambia
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &40504651
 MonoBehaviour:
@@ -1274,6 +1286,64 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
+--- !u!1 &465673142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465673144}
+  - component: {fileID: 465673143}
+  m_Layer: 0
+  m_Name: Controlador toggle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &465673143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465673142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ce4263e2621ef4f971a1a4e6322003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respaldo_tog: {fileID: 2087966766}
+  baseprin_tog: {fileID: 492987279}
+  basesec_tog: {fileID: 1683785786}
+  tubo_tog: {fileID: 954745859}
+  pata1_tog: {fileID: 1027593350}
+  pata2_tog: {fileID: 192586914}
+  soportepat_tog: {fileID: 458965949}
+  respaldo: {fileID: 1162626148}
+  base_secundaria: {fileID: 1407364088}
+  base_principal: {fileID: 340772744}
+  tubo_base: {fileID: 45575799}
+  pata1: {fileID: 1789954872}
+  pata2: {fileID: 188453342}
+  soporte_patas: {fileID: 1707480071}
+--- !u!4 &465673144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465673142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 479.04865, y: 243.1417, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &475754693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4104645495024490842, guid: b2a4287186eb8e74a8de0e6e9345abbc, type: 3}
