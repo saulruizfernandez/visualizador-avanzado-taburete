@@ -530,7 +530,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: "S\xF3lo base principal"
       m_Image: {fileID: 0}
-    - m_Text: "S\xF3lo base secundaria"
+    - m_Text: "S\xF3lo base sec"
       m_Image: {fileID: 0}
     - m_Text: "S\xF3lo tubo base"
       m_Image: {fileID: 0}
@@ -2563,7 +2563,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 787433744}
-  pulsadoI: 0
 --- !u!4 &714796072
 Transform:
   m_ObjectHideFlags: 0
@@ -2662,16 +2661,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 714796071}
-        m_TargetAssemblyTypeName: panel_info, Assembly-CSharp
-        m_MethodName: PulsaI
-        m_Mode: 1
+      - m_Target: {fileID: 787433748}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: abr-cierra
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 787433748}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: cierra-abr
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &718675994
@@ -2884,13 +2895,14 @@ GameObject:
   - component: {fileID: 787433745}
   - component: {fileID: 787433747}
   - component: {fileID: 787433746}
+  - component: {fileID: 787433748}
   m_Layer: 5
   m_Name: Panel Informacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &787433745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2950,6 +2962,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787433744}
   m_CullTransparentMesh: 1
+--- !u!95 &787433748
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787433744}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a380765df7239a458bb7a129d211593, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &790079717
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,26 +8,18 @@ using UnityEngine.UI;
 
 public class panel_info : MonoBehaviour
 {
-    public GameObject panel;
-    public bool pulsadoI = false;
+    [SerializeField] GameObject panel;
+    Animator animator;
     void Start()
     {
-        panel.SetActive(true);
+        animator = panel.GetComponent<Animator>();
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.I)) {
-            if (pulsadoI == true) {
-                panel.SetActive(true);
-                pulsadoI = false;
-            }
-         }
-    }
-
-    public void PulsaI()
-    {
-        pulsadoI = true;
-        panel.SetActive(false);
+            animator.ResetTrigger("abr-cierra");
+            animator.SetTrigger("cierra-abr");
+        }
     }
 }
