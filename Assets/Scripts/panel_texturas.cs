@@ -41,17 +41,18 @@ public class panel_texturas : MonoBehaviour
     [SerializeField] Material azul;
     [SerializeField] Material marron;
 
-    [SerializeField] Toogle[] casillas;
+    [SerializeField] Toggle[] casillas;
 
     void Start()
     {
         rend_base_prin = base_principal.GetComponent<MeshRenderer>();
+        rend_base_sec = base_secundaria.GetComponent<MeshRenderer>();
         rend_aro1 = aro1.GetComponent<MeshRenderer>();
         rend_aro2 = aro2.GetComponent<MeshRenderer>();
         rend_aro3 = aro3.GetComponent<MeshRenderer>();
         rend_tubo = tubo.GetComponent<MeshRenderer>();
         rend_pata1 = pata1.GetComponent<MeshRenderer>();
-        rend_aro1 = pata2.GetComponent<MeshRenderer>();
+        rend_pata2 = pata2.GetComponent<MeshRenderer>();
         rend_soporte_pat = soporte_pat.GetComponent<MeshRenderer>();
         rend_pasador = pasador.GetComponent<MeshRenderer>();
         rend_respaldo = respaldo.GetComponent<MeshRenderer>();
@@ -67,31 +68,56 @@ public class panel_texturas : MonoBehaviour
     {
         rend_base_prin.material = madera1;
         rend_base_sec.material = madera1;
-        casillas[0].isOn = true;
-        casillas[1].isOn = false;
+        casillas[1].SetIsOnWithoutNotify(false);
+        casillas[0].SetIsOnWithoutNotify(true);
     }
 
     public void Selectmadera2()
     {
         rend_base_prin.material = madera2;
         rend_base_sec.material = madera2;
+        casillas[0].SetIsOnWithoutNotify(false);
+        casillas[1].SetIsOnWithoutNotify(true);
     }
 
     public void Selectmetal1()
     {
-        rend_base_prin.material = metal1;
-        rend_aro1.material = metal1;
-        rend_aro2.material = metal1;
-        rend_aro3.material = metal1;
-        rend_base_sec.material = metal1;
+        rend_tubo.material = metal1;
+        rend_pata1.material = metal1;
+        rend_pata2.material = metal1;
+        rend_soporte_pat.material = metal1;
+        rend_pasador.material = metal1;
+        rend_respaldo.material = metal1;
+        // casillas[2].isOn = true;
+        //casillas[3].isOn = false;
     }
 
     public void Selectmetal2()
     {
-        rend_base_prin.material = metal2;
-        rend_aro1.material = metal2;
-        rend_aro2.material = metal2;
-        rend_aro3.material = metal2;
-        rend_base_sec.material = metal2;
+        rend_tubo.material = metal2;
+        rend_pata1.material = metal2;
+        rend_pata2.material = metal2;
+        rend_soporte_pat.material = metal2;
+        rend_pasador.material = metal2;
+        rend_respaldo.material = metal2;
+        //casillas[3].isOn = true;
+        //casillas[2].isOn = false;
+    }
+
+    public void Selectazul()
+    {
+        rend_aro1.material = azul;
+        rend_aro2.material = azul;
+        rend_aro3.material = azul;
+        //casillas[3].isOn = false;
+    }
+
+    public void Selectmarron()
+    {
+        rend_aro1.material = marron;
+        rend_aro2.material = marron;
+        rend_aro3.material = marron;
+        //casillas[3].isOn = true;
+        //casillas[2].isOn = false;
     }
 }
