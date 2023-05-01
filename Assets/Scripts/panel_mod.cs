@@ -22,6 +22,10 @@ public class panel_mod : MonoBehaviour
 
     [SerializeField] Dropdown desplegable;
 
+    [SerializeField] GameObject panel_piezas;
+
+    public bool activo_panel_mod = true;
+
     void Start()
     {
         
@@ -30,7 +34,15 @@ public class panel_mod : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyUp(KeyCode.P)) {
+            if (activo_panel_mod == true) {
+                panel_piezas.SetActive(false);
+                activo_panel_mod = false;
+            } else {
+                panel_piezas.SetActive(true);
+                activo_panel_mod = true;
+            }
+        }
     }
 
     public void CambioDrop()
