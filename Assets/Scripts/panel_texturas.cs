@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class panel_texturas : MonoBehaviour
 {
+    [SerializeField] GameObject panel_mod;
+
     [SerializeField] GameObject base_principal;
     [SerializeField] GameObject aro1;
     [SerializeField] GameObject aro2;
@@ -43,6 +45,8 @@ public class panel_texturas : MonoBehaviour
 
     [SerializeField] Toggle[] casillas;
 
+    public bool pulsadoM = true;
+
     void Start()
     {
         rend_base_prin = base_principal.GetComponent<MeshRenderer>();
@@ -61,7 +65,15 @@ public class panel_texturas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.M)) {
+            if (pulsadoM == false) {
+                panel_mod.SetActive(true);
+                pulsadoM = true;
+            } else {
+                panel_mod.SetActive(false);
+                pulsadoM = false;
+            }
+        }
     }
 
     public void Selectmadera1()
@@ -88,8 +100,8 @@ public class panel_texturas : MonoBehaviour
         rend_soporte_pat.material = metal1;
         rend_pasador.material = metal1;
         rend_respaldo.material = metal1;
-        // casillas[2].isOn = true;
-        //casillas[3].isOn = false;
+        casillas[3].SetIsOnWithoutNotify(true);
+        casillas[2].SetIsOnWithoutNotify(false);
     }
 
     public void Selectmetal2()
@@ -100,8 +112,8 @@ public class panel_texturas : MonoBehaviour
         rend_soporte_pat.material = metal2;
         rend_pasador.material = metal2;
         rend_respaldo.material = metal2;
-        //casillas[3].isOn = true;
-        //casillas[2].isOn = false;
+        casillas[2].SetIsOnWithoutNotify(true);
+        casillas[3].SetIsOnWithoutNotify(false);
     }
 
     public void Selectazul()
@@ -109,7 +121,8 @@ public class panel_texturas : MonoBehaviour
         rend_aro1.material = azul;
         rend_aro2.material = azul;
         rend_aro3.material = azul;
-        //casillas[3].isOn = false;
+        casillas[4].SetIsOnWithoutNotify(true);
+        casillas[5].SetIsOnWithoutNotify(false);
     }
 
     public void Selectmarron()
@@ -117,7 +130,7 @@ public class panel_texturas : MonoBehaviour
         rend_aro1.material = marron;
         rend_aro2.material = marron;
         rend_aro3.material = marron;
-        //casillas[3].isOn = true;
-        //casillas[2].isOn = false;
+        casillas[5].SetIsOnWithoutNotify(true);
+        casillas[4].SetIsOnWithoutNotify(false);
     }
 }
